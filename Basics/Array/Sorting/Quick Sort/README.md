@@ -15,12 +15,12 @@
     
     PARTITION(A,START,END):
         PIVOT = A[END]
-        I = START
+        I = START - 1
         FOR J = START TO END:
             IF A[J] < PIVOT:
-                SWAP(A[J],A[I])
                 I = I + 1
+                SWAP(A[J],A[I])
             END OF IF
         END OF FOR
-        SWAP(A[I+1],PIVOT)
+        SWAP(A[I+1],A[END])
         RETURN I+1
